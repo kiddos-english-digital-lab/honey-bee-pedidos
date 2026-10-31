@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-body text-cocoa-700 antialiased;
+  }
+
+  :focus-visible {
+    outline: 3px solid #513326;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex min-h-[2.75rem] items-center justify-center gap-2 rounded-full bg-cocoa-700 px-5 py-3 font-bold text-cream transition hover:bg-cocoa-600 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-[2.75rem] items-center justify-center gap-2 rounded-full bg-white px-5 py-3 font-bold text-cocoa-700 ring-1 ring-cocoa-200 transition hover:bg-rose-50;
+  }
+
+  .btn-danger {
+    @apply inline-flex min-h-[2.75rem] items-center justify-center gap-2 rounded-full bg-brick-700 px-5 py-3 font-bold text-cream transition hover:bg-brick-500 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .icon-btn {
+    @apply grid h-11 w-11 shrink-0 place-items-center rounded-full text-cocoa-700 transition hover:bg-rose-100 disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .stripes-rose {
+    background-image: repeating-linear-gradient(90deg, #f3d6e2 0 14px, #fffcf7 14px 28px);
+  }
+
+  .eyebrow {
+    @apply text-sm font-bold uppercase tracking-[0.2em] text-rose-700;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
